@@ -1,5 +1,6 @@
 # ChatNow v0.1
 
+项目进展：
 ## 1.功能
 
 - 帐号管理
@@ -43,3 +44,6 @@
 
 ## 4. 技术选型
 
+- http框架：gin
+- websocket：gorilla/websocket
+- 数据库：mongoDB
