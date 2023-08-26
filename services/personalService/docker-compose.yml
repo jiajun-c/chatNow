@@ -1,0 +1,22 @@
+services:
+  friendDB:
+    image: mongo
+    container_name: friendDB
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+      - MONGO_INITDB_DATABASE=friend
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=123456
+    ports:
+      - "6383:27017"
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: 123456
+      ME_CONFIG_MONGODB_URL: mongodb://root:123456@friendDB:27017/
